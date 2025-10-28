@@ -1,3 +1,5 @@
+export { LinkedList }
+
 class LinkedList {
   head = undefined;
   length = 0;
@@ -7,18 +9,17 @@ class LinkedList {
     this.length++;
     if (this.length === 1) {this.head = newNode}
     if (this.length > 1) {
-      // TODO: If there is a node before this new one,
-      // we must update its .nextNode property
       let penultimateNode = this.at(this.length - 2)
       penultimateNode.nextNode = newNode;
     }
   }
 
-  // prepend(value) {    
-  //   const head = new Node(value, this.head.nextNode);
-  //   this.head = head;    
-  //   this.length++;
-  // }
+  prepend(value) {    
+    const oldHead = this.head;
+    const newHead = new Node(value, oldHead);
+    this.head = newHead;    
+    this.length++;
+  }
 
   // size() {
   //   return this.length;
@@ -103,7 +104,15 @@ class LinkedList {
     let i = 0;
     let string = '';
     while (i < this.length) {
-      string += `(${this.at(i).value}) -> `;
+      // for printing nextNode.value for debugging
+      let nextNodeValue;
+      if (this.at(i).nextNode) {
+        nextNodeValue = this.at(i).nextNode.value
+      } else {
+        nextNodeValue = "null"
+      }
+      // end
+      string += `(${this.at(i).value}, nextNode: ${nextNodeValue}) -> `;
       i++
     }
     string += 'null';
@@ -117,15 +126,3 @@ class Node {
     this.nextNode = nextNode;
   }
 }
-
-// example uses class syntax - adjust as necessary
-const list = new LinkedList();
-
-list.append("dog");
-list.append("cat");
-list.append("parrot");
-list.append("hamster");
-list.append("snake");
-list.append("turtle");
-
-console.log(list.toString());
