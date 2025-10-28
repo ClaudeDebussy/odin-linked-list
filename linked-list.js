@@ -31,16 +31,16 @@ class LinkedList {
     }
   }
 
-  // tail() {
-  //   if (this.length < 1) {throw new Error("LinkedList has no elements")};
-  //   let currentNode = this.head; // start at head node
-  //   let i = 1;
-  //   while (currentNode.nextNode != null) {
-  //     i++;
-  //     currentNode = currentNode.nextNode;
-  //   }
-  //   return currentNode;
-  // }
+  tail() {
+    if (this.length < 1) {throw new Error("LinkedList has no elements")};
+    let currentNode = this.headNode; // start at head node
+    let i = 1;
+    while (currentNode.nextNode != null) {
+      i++;
+      currentNode = currentNode.nextNode;
+    }
+    return currentNode;
+  }
 
   at(index) {
     if (this.length < 1) {throw new Error("LinkedList has no elements")};
