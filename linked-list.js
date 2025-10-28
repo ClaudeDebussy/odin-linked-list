@@ -21,18 +21,18 @@ class LinkedList {
     this.length++;
   }
 
-  // size() {
-  //   return this.length;
+  size() {
+    return this.length;
     
-  //   // if (this.length === 0) {return 0} // for empty linked lists
-  //   // let currentNode = this.head; // start at head node
-  //   // let i = 1;
-  //   // while (currentNode.nextNode != null) {
-  //   //   i++;
-  //   //   currentNode = currentNode.nextNode;
-  //   // }
-  //   // return i;
-  // }
+    // if (this.length === 0) {return 0} // for empty linked lists
+    // let currentNode = this.head; // start at head node
+    // let i = 1;
+    // while (currentNode.nextNode != null) {
+    //   i++;
+    //   currentNode = currentNode.nextNode;
+    // }
+    // return i;
+  }
 
   // head() {
   //   if (this.length > 0) {return this.head}
