@@ -12,5 +12,6 @@ list.append("turtle");
 list.prepend("prepended");
 list.pop();
 console.log(list.contains("prepended"));
+console.log(list.find("snake"));
 
 console.log(list.toString());

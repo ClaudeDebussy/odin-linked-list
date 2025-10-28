@@ -76,20 +76,20 @@ class LinkedList {
     return false;
   }
 
-  // find(value) {
-  //   if (this.length === 0) {throw new Error("LinkedList has no elements")};
-  //   let currentNode = this.head; // start at head node
-  //   let i = 1;
-  //   while (currentNode.nextNode != null) {
-  //     if (currentNode.value === value) {
-  //       return i;
-  //     }
-  //     i++;
-  //     currentNode = currentNode.nextNode;
-  //   }
-  //   if (currentNode.value === value) {return i};
-  //   return false;
-  // }
+  find(value) {
+    if (this.length === 0) {throw new Error("LinkedList has no elements")};
+    let currentNode = this.headNode; // start at head node
+    let i = 0;
+    while (currentNode.nextNode != null) {
+      if (currentNode.value === value) {
+        return i;
+      }
+      i++;
+      currentNode = currentNode.nextNode;
+    }
+    if (currentNode.value === value) {return i};
+    return null;
+  }
 
   toString() {
     if (this.length === 0) {throw new Error("LinkedList has no elements")};
