@@ -59,23 +59,22 @@ class LinkedList {
     let lastNode = this.at(this.length - 1);
     lastNode.value = null;
     let penultimateNode = this.at(this.length - 2);
-    penultimateNode.nextNode = null;
-    
+    penultimateNode.nextNode = null;    
     this.length--;
   }
 
-  // contains(value) {
-  //   if (this.length === 0) {throw new Error("LinkedList has no elements")};
-  //   let currentNode = this.head; // start at head node
-  //   let i = 1;
-  //   while (currentNode.nextNode != null) {
-  //     if (currentNode.value === value) {return true}
-  //     i++;
-  //     currentNode = currentNode.nextNode;
-  //   }
-  //   if (currentNode.value === value) {return true};
-  //   return false;
-  // }
+  contains(value) {
+    if (this.length === 0) {throw new Error("LinkedList has no elements")};
+    let currentNode = this.headNode; // start at head node
+    let i = 1;
+    if (currentNode.value === value) {return true};
+    while (currentNode.nextNode != null) {
+      if (currentNode.value === value) {return true}
+      i++;
+      currentNode = currentNode.nextNode;
+    }    
+    return false;
+  }
 
   // find(value) {
   //   if (this.length === 0) {throw new Error("LinkedList has no elements")};
