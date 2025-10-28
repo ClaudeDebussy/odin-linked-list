@@ -13,4 +13,6 @@ list.append("turtle");
 list.prepend("prepended");
 list.insertAt("inserted", 7);
 
+list.removeAt(6);
+
 console.log(list.toString());

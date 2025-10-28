@@ -120,7 +120,7 @@ class LinkedList {
       this.append(value);
       return;
     }
-    if (index < 0 || index > this.length) {throw new Error("Invalid index.");
+    if (index < 0 || index > this.length) {throw new Error("Invalid index");
     }
     let nodeBefore = this.at(index - 1);
     let nodeAfter = this.at(index);
@@ -129,18 +129,22 @@ class LinkedList {
     this.length++;
   }
 
-  // removeAt(index) {
-  //   let node = this.at(index);
-  //   if (index === 0) {
-  //     node.value = null;
-  //     node.nextNode = null;
-  //     this.length--;
-  //     return;
-  //   }
-  //   if (index < 0 || index >= this.length) {
-
-  //   }
-  // }
+  removeAt(index) {
+    let node = this.at(index);    
+    if (index === 0) {
+      node.value = null;
+      node.nextNode = null;
+      this.length--;
+      return;
+    }
+    if (index < 0 || index >= this.length) {
+      throw new Error("Invalid index");
+    }
+    let nodeBefore = this.at(index - 1);
+    let nodeAfter = this.at(index + 1);
+    nodeBefore.nextNode = nodeAfter;
+    this.length--;
+  }
 }
 
 class Node {
