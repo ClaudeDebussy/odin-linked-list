@@ -11,6 +11,6 @@ list.append("snake");
 list.append("turtle");
 
 list.prepend("prepended");
-list.insertAt("inserted", 1);
+list.insertAt("inserted", 7);
 
 console.log(list.toString());

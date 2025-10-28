@@ -116,6 +116,10 @@ class LinkedList {
       this.prepend(value)
       return;
     }
+    if (index === this.length) {
+      this.append(value);
+      return;
+    }
     if (index < 0 || index > this.length) {throw new Error("Invalid index.");
     }
     let nodeBefore = this.at(index - 1);
@@ -124,6 +128,19 @@ class LinkedList {
     nodeBefore.nextNode = newNode;
     this.length++;
   }
+
+  // removeAt(index) {
+  //   let node = this.at(index);
+  //   if (index === 0) {
+  //     node.value = null;
+  //     node.nextNode = null;
+  //     this.length--;
+  //     return;
+  //   }
+  //   if (index < 0 || index >= this.length) {
+
+  //   }
+  // }
 }
 
 class Node {
