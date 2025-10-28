@@ -54,13 +54,15 @@ class LinkedList {
     return currentNode;
   }
 
-  // pop() {
-  //   if (this.length === 0) {throw new Error("LinkedList has no elements")};
-  //   let penultimateNode = this.at(this.length - 2);
-  //   penultimateNode.nextNode = 0;
-  //   let lastNode = this.at(this.length - 1);
-  //   lastNode.value = null;
-  // }
+  pop() {
+    if (this.length === 0) {throw new Error("LinkedList has no elements")};
+    let lastNode = this.at(this.length - 1);
+    lastNode.value = null;
+    let penultimateNode = this.at(this.length - 2);
+    penultimateNode.nextNode = null;
+    
+    this.length--;
+  }
 
   // contains(value) {
   //   if (this.length === 0) {throw new Error("LinkedList has no elements")};
