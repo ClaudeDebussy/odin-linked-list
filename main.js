@@ -9,9 +9,8 @@ list.append("parrot");
 list.append("hamster");
 list.append("snake");
 list.append("turtle");
+
 list.prepend("prepended");
-list.pop();
-console.log(list.contains("prepended"));
-console.log(list.find("snake"));
+list.insertAt("inserted", 1);
 
 console.log(list.toString());

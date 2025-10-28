@@ -110,6 +110,20 @@ class LinkedList {
     string += 'null';
     return string;
   }
+
+  insertAt(value, index) {
+    if (index === 0) {
+      this.prepend(value)
+      return;
+    }
+    if (index < 0 || index > this.length) {throw new Error("Invalid index.");
+    }
+    let nodeBefore = this.at(index - 1);
+    let nodeAfter = this.at(index);
+    let newNode = new Node(value, nodeAfter);
+    nodeBefore.nextNode = newNode;
+    this.length++;
+  }
 }
 
 class Node {
