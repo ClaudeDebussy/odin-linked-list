@@ -1,13 +1,13 @@
 export { LinkedList }
 
 class LinkedList {
-  head = undefined;
+  headNode = undefined;
   length = 0;
   
   append(value) {
     const newNode = new Node(value);
     this.length++;
-    if (this.length === 1) {this.head = newNode}
+    if (this.length === 1) {this.headNode = newNode}
     if (this.length > 1) {
       let penultimateNode = this.at(this.length - 2)
       penultimateNode.nextNode = newNode;
@@ -15,30 +15,21 @@ class LinkedList {
   }
 
   prepend(value) {    
-    const oldHead = this.head;
+    const oldHead = this.headNode;
     const newHead = new Node(value, oldHead);
-    this.head = newHead;    
+    this.headNode = newHead;    
     this.length++;
   }
 
   size() {
     return this.length;
-    
-    // if (this.length === 0) {return 0} // for empty linked lists
-    // let currentNode = this.head; // start at head node
-    // let i = 1;
-    // while (currentNode.nextNode != null) {
-    //   i++;
-    //   currentNode = currentNode.nextNode;
-    // }
-    // return i;
   }
 
-  // head() {
-  //   if (this.length > 0) {return this.head}
-  //   else {throw new Error("LinkedList has no elements");
-  //   }
-  // }
+  head() {
+    if (this.length > 0) {return this.headNode}
+    else {throw new Error("LinkedList has no elements");
+    }
+  }
 
   // tail() {
   //   if (this.length < 1) {throw new Error("LinkedList has no elements")};
@@ -53,8 +44,8 @@ class LinkedList {
 
   at(index) {
     if (this.length < 1) {throw new Error("LinkedList has no elements")};
-    if (index === 0) {return this.head}
-    let currentNode = this.head;
+    if (index === 0) {return this.headNode}
+    let currentNode = this.headNode;
     let i = 0;
     while (i < index) {
       currentNode = currentNode.nextNode;
